@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="600.0" prefWidth="900.0">
+        <items>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: grey;">
+               <children>
+                  <Text layoutX="46.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Background Color" textAlignment="CENTER" wrappingWidth="172.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="46.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color of Points" textAlignment="CENTER" wrappingWidth="172.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="46.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Points" textAlignment="CENTER" wrappingWidth="172.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connect to times N " textAlignment="CENTER" wrappingWidth="187.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <ColorPicker fx:id="bgcolor" editable="true" layoutX="62.0" layoutY="57.0" onAction="#ChangeBGColor" prefHeight="27.0" prefWidth="140.0" />
+                  <ColorPicker fx:id="lcolor" editable="true" layoutX="63.0" layoutY="208.0" onAction="#ChangeLColor" prefHeight="27.0" prefWidth="140.0" />
+                  <ColorPicker fx:id="pcolor" editable="true" layoutX="64.0" layoutY="272.0" onAction="#ChangePColor" prefHeight="27.0" prefWidth="140.0" />
+                  <TextField fx:id="npTF" alignment="CENTER" layoutX="62.0" layoutY="340.0" prefHeight="25.0" prefWidth="140.0" text="200">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="NTF" alignment="CENTER" layoutX="93.0" layoutY="406.0" prefHeight="31.0" prefWidth="82.0" text="2">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="38.0" layoutY="538.0" mnemonicParsing="false" onAction="#runButtonPressed" prefHeight="44.0" prefWidth="74.0" style="-fx-background-color: green;" text="Run" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="39.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Radius" textAlignment="CENTER" wrappingWidth="187.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="152.0" layoutY="538.0" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="44.0" prefWidth="74.0" style="-fx-background-color: blue;" text="Save" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Slider fx:id="slider" layoutX="40.0" layoutY="476.0" max="300.0" min="1.0" onMouseDragged="#changeRadius" prefHeight="33.0" prefWidth="187.0" showTickLabels="true" value="250.0" />
+                  <Text layoutX="46.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color of Lines" textAlignment="CENTER" wrappingWidth="172.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <RadioButton fx:id="iradio" layoutX="83.0" layoutY="125.0" mnemonicParsing="false" onAction="#Iradio" text="Index mode">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="RadioButton" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="lradio" layoutX="83.0" layoutY="97.0" mnemonicParsing="false" onAction="#Lradio" text="Lenght mode" toggleGroup="$RadioButton" />
+                  <RadioButton fx:id="cradio" layoutX="83.0" layoutY="154.0" mnemonicParsing="false" onAction="#Cradio" selected="true" text="Custom mode" toggleGroup="$RadioButton" />
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="600.0" />
+        </items>
+      </SplitPane>
+   </children>
+</GridPane>
